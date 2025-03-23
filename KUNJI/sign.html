@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Sign Up - KUNJI</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        <div id="header">
+            <div class="inner">
+                <header>
+                    <h1><a href="index.html" id="logo">KUNJI</a></h1>
+                    <hr />
+                    <p>Create Your Account</p>
+                </header>
+            </div>
+        </div>
+
+        <!-- Sign Up Form -->
+        <section id="signup" class="container">
+            <form method="post" action="/signup">
+                <div class="row">
+                    <div class="col-12">
+                        <label for="name">Full Name</label>
+                        <input type="text" name="name" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="col-12">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Create a password" required>
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" value="Sign Up" class="button">
+                    </div>
+                </div>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+            <hr />
+        </section>
+    </div>
+</body>
+</html>

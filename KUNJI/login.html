@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Login | KUNJI</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body>
+    <div id="page-wrapper">
+        <section id="main" class="container">
+            <header>
+                <h2>Login</h2>
+                <p>Access your account</p>
+            </header>
+            <div class="box">
+                <form method="post" action="/login">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-12">
+                            <input type="email" name="email" id="email" value="" placeholder="Email" required />
+                        </div>
+                        <div class="col-12">
+                            <input type="password" name="password" id="password" value="" placeholder="Password" required />
+                        </div>
+                        <div class="col-12">
+                            <ul class="actions">
+                                <li><input type="submit" value="Login" class="primary" /></li>
+                                <li><a href="#">Forgot Password?</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

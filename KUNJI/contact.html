@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Contact Us - KUNJI</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body>
+    <div id="page-wrapper">
+        <div id="header">
+            <div class="inner">
+                <header>
+                    <h1><a href="index.html" id="logo">KUNJI</a></h1>
+                    <hr />
+                    <p>Get in touch with us!</p>
+                </header>
+            </div>
+        </div>
+
+        <section id="contact" class="container ">
+            <header>
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Fill out the form below or reach us directly.</p>
+            </header>
+
+            <form  id="contactForm">
+                <div class="row gtr-50">
+                    <div class="col-6 col-12-mobile">
+                        <input type="text" name="name" id="name" placeholder="Your Name" required />
+                        <span id="nameError" class="error"></span>
+                    </div>
+                    <div class="col-6 col-12-mobile">
+                        <input type="email" name="email" id="email" placeholder="Your Email" required />
+                        <span id="emailError" class="error"></span>
+                    </div>
+                    <div class="col-12  ">
+                        <input type="tel" name="phone" id="phone" placeholder="Your Phone" pattern="[0-9]{10}" />
+                        <span id="phoneError" class="error"></span>
+                    </div>
+                    <div class="col-12">
+                        <textarea name="message" id="message" placeholder="Your Message" rows="6" required></textarea>
+                        <span id="messageError" class="error"></span>
+                    </div>
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Send Message" class="primary" /></li>
+                            <li><input type="reset" value="Reset" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+
+
+
+
+        
+            <p id="formMessage"></p>
+        </section>
+
+        <section id="company-info" class="container">
+            <header>
+                <h2>Our Office</h2>
+            </header>
+            <p><strong>Address:</strong> 123 Textile Avenue, New Delhi, India</p>
+            <p><strong>Email:</strong> support@kunji.com</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Follow Us:</strong>
+                <a href="#" class="icon brands fa-facebook-f"> Facebook</a>
+                <a href="#" class="icon brands fa-instagram"> Instagram</a>
+                <a href="#" class="icon brands fa-twitter"> Twitter</a>
+            </p>
+        </section>
+        <hr />
+
+        <script>
+
+
+
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent form submission
+        let isValid = true;
+
+        // Clear previous errors
+        document.querySelectorAll('.error').forEach(el => el.innerText = '');
+
+        // Validate Name
+        const name = document.getElementById('name').value.trim();
+        if (name === '') {
+            document.getElementById('nameError').innerText = 'Please enter your name.';
+            isValid = false;
+        }
+
+        // Validate Email
+        const email = document.getElementById('email').value.trim();
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+        if (email === '') {
+            document.getElementById('emailError').innerText = 'Please enter your email.';
+            isValid = false;
+        } else if (!emailPattern.test(email)) {
+            document.getElementById('emailError').innerText = 'Please enter a valid email address.';
+            isValid = false;
+        }
+
+        // Validate Phone
+        const phone = document.getElementById('phone').value.trim();
+        const phonePattern = /^[0-9]{10}$/;
+        if (phone !== '' && !phonePattern.test(phone)) {
+            document.getElementById('phoneError').innerText = 'Please enter a valid 10-digit phone number.';
+            isValid = false;
+        }
+
+        // Validate Message
+        const message = document.getElementById('message').value.trim();
+        if (message === '') {
+            document.getElementById('messageError').innerText = 'Please enter your message.';
+            isValid = false;
+        } else if (message.length < 10) {
+            document.getElementById('messageError').innerText = 'Message should be at least 10 characters.';
+            isValid = false;
+        }
+
+        // If form is valid, submit it
+        if (isValid) {
+            alert('Form submitted successfully!');
+            document.getElementById('contactForm').reset();
+        }
+    });
+
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                let name = document.getElementById("name").value;
+                let email = document.getElementById("email").value;
+                let message = document.getElementById("message").value;
+
+                if(name && email && message) {
+                    document.getElementById("formMessage").textContent = "Thank you for contacting us! We will get back to you soon.";
+                    document.getElementById("formMessage").style.color = "green";
+                    this.reset();
+                } else {
+                    document.getElementById("formMessage").textContent = "Please fill all required fields.";
+                    document.getElementById("formMessage").style.color = "red";
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
